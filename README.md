@@ -2,6 +2,7 @@
 MJH Engineering Ltd Code Challenge - Task List
 
 The challenge is to create a basic Task List using react and redux (Using a actions/reducer pattern).
+Please fork this repo and send me a email with a link to your fork when you want to submit it.
 
 
 For this challenge please use the api https://jsonplaceholder.typicode.com/, to get/post/patch data in json format.
@@ -18,7 +19,7 @@ The form inputs should be title/body, you can set the userId=1.
 The title should be a required field.
 
 This git repo has a basic create-react-app bootstrapped into it.
-Please clone this repo and then run "npm install" followed by "npm start"
+Please fork this repo and then clone it run "npm install" followed by "npm start" - on your local machine.
 
 
 ### Evaluation Criteria
