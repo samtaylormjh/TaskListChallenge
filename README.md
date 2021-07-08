@@ -19,7 +19,7 @@ The form inputs should be title/body, you can set the userId=1.
 The title should be a required field.
 
 This git repo has a basic create-react-app bootstrapped into it.
-Please fork this repo and then clone it run "npm install" followed by "npm start" - on your local machine.
+Please fork this repo and then clone and run "npm install" followed by "npm start"/
 
 
 ### Evaluation Criteria
