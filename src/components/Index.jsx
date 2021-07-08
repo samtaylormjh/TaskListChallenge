@@ -1,15 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Todos from './Todos'
+// import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-function Index () {
-  
+export default function Index () {
+  const todos = useSelector((state) => state.todos)
+
   return (
-    <div>
-      <li>placeholder todo</li>
-      <Link to={'/Addtodo'}><button>Add Todo</button></Link>
-      <Link to={'/Edittodo'}><button>Edit Todo</button></Link>
-    </div>
+    <ul>
+      {todos.map((todo) => (
+				<Todos id={todo.id} title={todo.title} completed={todo.completed} />
+			))}
+    </ul>
   )
 }
-
-export default Index

@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addTodo } from '../redux/todoSlice'
 
-function AddTodo () {
+export default function AddTodo () {
   const [value, setValue] = useState('')
+
+  const dispatch = useDispatch()
 
   const onSubmit = (e) => {
     e.preventDefault()
+    dispatch(addTodo({
+      title: value
+    }))
   }
   
   return (
@@ -14,5 +21,3 @@ function AddTodo () {
     </form>
   )
 }
-
-export default AddTodo

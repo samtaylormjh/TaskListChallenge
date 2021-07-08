@@ -7,6 +7,7 @@ import Index from './Index'
 const App = () => {
   return (
     <>
+    <AddTodo/>
       <Router>
         <Switch>
           <Route exact path={'/'} component={Index}/>
