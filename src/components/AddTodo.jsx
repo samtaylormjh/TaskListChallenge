@@ -16,7 +16,7 @@ export default function AddTodo () {
   
   return (
     <form onSubmit={onSubmit}>
-      <input type='text' placeholder='Add todo...' value={value} onChange={(e) => setValue(e.target.value)} /> 
+      <input type='text' placeholder='Add todo...' required value={value} onChange={(e) => setValue(e.target.value)} /> 
       <button positive type='submit'>Submit</button>
     </form>
   )

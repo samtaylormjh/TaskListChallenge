@@ -17,6 +17,12 @@ export default function Todos ({ id, title, completed }) {
     )
   }
 
+  // const onEdit = () => {
+  //   dispatch(
+  //     editTodo({ id: id })
+  //   )
+  // }
+
 	return (
 		<li>
 			<div>
