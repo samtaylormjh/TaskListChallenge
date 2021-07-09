@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const getTodosAsync = createAsyncThunk(
 	'todos/getTodosAsync',
 	async () => {
-		const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
+		const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=8')
 		if (res.ok) {
 			const todos = await res.json()
 			return { todos }

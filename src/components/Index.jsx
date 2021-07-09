@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Todos from './Todos'
 import { useSelector, useDispatch } from 'react-redux'
 import { getTodosAsync } from '../redux/todoSlice'
+import { Grid } from 'semantic-ui-react'
 
 export default function Index () {
   const dispatch = useDispatch()
@@ -12,12 +13,12 @@ export default function Index () {
 	}, [dispatch])
 
   return (
-    <>
-    <ul>
+    <Grid className="ui centered list">
+    <div className="item">
       {todos.map((todo) => (
 				<Todos id={todo.id} title={todo.title} completed={todo.completed} />
 			))}
-    </ul>
-    </>
+   </div>
+    </Grid>
   )
 }
