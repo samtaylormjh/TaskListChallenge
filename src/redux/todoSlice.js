@@ -1,22 +1,22 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 export const getTodosAsync = createAsyncThunk(
-	'todos/getTodosAsync',
-	async () => {
-		const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=8')
-		if (res.ok) {
-			const todos = await res.json()
-			return { todos }
-		}
-	}
+  'todos/getTodosAsync',
+  async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=8')
+    if (res.ok) {
+      const todos = await res.json()
+      return { todos }
+    }
+  }
 )
 
 const todoSlice = createSlice({
   name: "todos",
   initialState: [
-    { userId: 1, id: 1, title: "todo1", completed: false},
-    { userId: 1, id: 2, title: "todo2", completed: false},
-    { userId: 1, id: 3, title: "todo3", completed: true}
+    { userId: 1, id: 1, title: "todo1", completed: false },
+    { userId: 1, id: 2, title: "todo2", completed: false },
+    { userId: 1, id: 3, title: "todo3", completed: true }
   ],
   reducers: {
     addTodo: (state, action) => {
@@ -35,19 +35,29 @@ const todoSlice = createSlice({
     deleteTodo: (state, action) => {
       return state.filter((todo) => todo.id !== action.payload.id
       )
+    },
+    editTodo: (state, action) => {
+      const updateTodo = {
+        userId: 1,
+        id: Date.now(),
+        title: action.payload.title,
+        completed: false
+      }
+      state.push(updateTodo)
     }
   },
   extraReducers: {
-		[getTodosAsync.fulfilled]: (state, action) => {
-			return action.payload.todos
+    [getTodosAsync.fulfilled]: (state, action) => {
+      return action.payload.todos
     }
-	},		
+  },
 })
 
-export const { 
+export const {
   addTodo,
   toggleComplete,
-  deleteTodo
+  deleteTodo,
+  editTodo
 } = todoSlice.actions
 
 export default todoSlice.reducer
