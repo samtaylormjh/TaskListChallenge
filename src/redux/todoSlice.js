@@ -36,6 +36,8 @@ const todoSlice = createSlice({
       return state.filter((todo) => todo.id !== action.payload.id
       )
     },
+    
+    // I wasnt sure how I might update a selected todo, I've done this in the past but inside a database.
     editTodo: (state, action) => {
       const updateTodo = {
         userId: 1,
